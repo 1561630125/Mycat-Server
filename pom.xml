@@ -272,32 +272,32 @@
 			</testResource>
 		</testResources>
 		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>com.google.code.maven-replacer-plugin</groupId>
-										<artifactId>replacer</artifactId>
-										<versionRange>[1.0.0,)</versionRange>
-										<goals>
-											<goal>replace</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore />
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-			</plugins>
+<!--			<plugins>-->
+<!--				<plugin>-->
+<!--					<groupId>org.eclipse.m2e</groupId>-->
+<!--					<artifactId>lifecycle-mapping</artifactId>-->
+<!--					<version>1.0.0</version>-->
+<!--					<configuration>-->
+<!--						<lifecycleMappingMetadata>-->
+<!--							<pluginExecutions>-->
+<!--								<pluginExecution>-->
+<!--									<pluginExecutionFilter>-->
+<!--										<groupId>com.google.code.maven-replacer-plugin</groupId>-->
+<!--										<artifactId>replacer</artifactId>-->
+<!--										<versionRange>[1.0.0,)</versionRange>-->
+<!--										<goals>-->
+<!--											<goal>replace</goal>-->
+<!--										</goals>-->
+<!--									</pluginExecutionFilter>-->
+<!--									<action>-->
+<!--										<ignore />-->
+<!--									</action>-->
+<!--								</pluginExecution>-->
+<!--							</pluginExecutions>-->
+<!--						</lifecycleMappingMetadata>-->
+<!--					</configuration>-->
+<!--				</plugin>-->
+<!--			</plugins>-->
 		</pluginManagement>
 		<plugins>
 			<plugin>
@@ -316,26 +316,32 @@
 							<outputFile>${project.basedir}/${version.file}</outputFile>
 							<replacements>
 								<replacement>
+									<!--suppress UnresolvedMavenProperty -->
 									<token>@buildnumber@</token>
 									<value>${buildNumber}</value>
 								</replacement>
 								<replacement>
+									<!--suppress UnresolvedMavenProperty -->
 									<token>@buildtime@</token>
 									<value>${maven.build.timestamp}</value>
 								</replacement>
 								<replacement>
+									<!--suppress UnresolvedMavenProperty -->
 									<token>@pomversion@</token>
 									<value>${project.version}</value>
 								</replacement>
 								<replacement>
+									<!--suppress UnresolvedMavenProperty -->
 									<token>@giturl@</token>
 									<value>https://github.com/MyCATApache/Mycat-Server.git</value>
 								</replacement>
 								<replacement>
+									<!--suppress UnresolvedMavenProperty -->
 									<token>@mycatsite@</token>
 									<value>http://www.mycat.org.cn</value>
 								</replacement>
 								<replacement>
+									<!--suppress UnresolvedMavenProperty -->
 									<token>@qqgroup@</token>
 									<value>106088787</value>
 								</replacement>
@@ -377,9 +383,9 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>2.1.2</version>
+				<version>3.2.0</version>
 				<configuration>
-					<encoding>${app.encoding}</encoding>
+					<!--<encoding>${app.encoding}</encoding>-->
 					<attach>true</attach>
 				</configuration>
 				<executions>
@@ -412,6 +418,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.10</version>
 				<configuration>
 					<sourceExcludes>
 						<sourceExclude>**/.svn/**</sourceExclude>
@@ -433,7 +440,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>appassembler-maven-plugin</artifactId>
-				<version>1.8</version>
+				<version>1.10</version>
 				<configuration>
 					<configurationDirectory>conf</configurationDirectory>
 					<includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>
@@ -534,7 +541,9 @@
 				</executions>
 			</plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.1.0</version>
 				<configuration>
 					<descriptors>
 						<descriptor>src/main/assembly/assembly-win.xml</descriptor>
