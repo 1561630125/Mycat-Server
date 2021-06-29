@@ -23,7 +23,7 @@
 		<developerConnection>scm:git:ssh://apachemycat@github.com/MyCATApache/Mycat-Server.git</developerConnection>
 		<url>scm:git:ssh://apachemycat@github.com/MyCATApache/Mycat-Server.git</url>
 	</scm>
-	<!-- repositories>
+	<repositories>
 		<repository>
 			<id>nexus</id>
 			<name>local private nexus</name>
@@ -41,7 +41,7 @@
 			<name>Internal Snapshots</name>
 			<url>http://nexus.mycat.io/content/repositories/snapshots</url>
 		</snapshotRepository>
-	</distributionManagement -->
+	</distributionManagement>
 	<dependencies>
 		<!-- <dependency> <groupId>com.google.guava</groupId> <artifactId>guava-parent</artifactId> 
 			<version>18.0</version> </dependency> -->
